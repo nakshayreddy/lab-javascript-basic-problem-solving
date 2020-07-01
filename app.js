@@ -6,34 +6,106 @@
 // 1.3 Create a variable `ProGrad-2` with the navigator's name.
 // 1.4 Print `"The navigator's name is YYYY"`.
 
+let prograd1 = "XXXX";
+console.log(prograd1);
+let prograd2 = "YYYY";
+console.log(prograd2);
+
 // Progression 2: Control Statements - 1
 // 2.1. Depending on which name is longer, print:
 // - The driver has the longest name, it has XX characters. or
 // - It seems that the navigator has the longest name, it has XX characters. or
 // - Wow, you both have equally long names, XX characters!.
+if (prograd1.length > prograd2.length) {
+  console.log("The driver has the longest name, it has " + prograd1);
+} else if (prograd2.length > prograd1.length) {
+  console.log("the navigator has the longest name, it has" + prograd2);
+} else {
+  console.log("Wow, you both have equally long names");
+}
 
 // 2.2. Check if the string contains vowels or not.
 // - If it contains vowels, print the name, and also print the vowel letters along with the vowel index. or
 // - print no vowels
-// - for example. In String ProGrad - o and a are vowels. Print ProGrad o a 2 5. 
+// - for example. In String ProGrad - o and a are vowels. Print ProGrad o a 2 5.
+let element = "name";
+var hasvowels;
+for (var i = 0; i < element.length; i++) {
+  var c = element[i];
+  if (c == "a" || c == "e" || c == "i" || c == "o" || c == "u") {
+    console.log(c, i);
+    hasvowels = true;
+  }
+  if (hasvowels == false) {
+    console.log("no vowels");
+  }
+}
 
 // 2.3. Check if the string contains uppercase and lowercase characters Xx
 // - Print the number of upper case characters
 // - Print the number of lower case characters
 
+var string = "UPPeR CAse";
+var count = 0;
+for (var i = 0; i < string.length; i++) {
+  ch = string.charAt(i);
+  if (ch >= "A" && ch <= "Z") {
+    count++;
+  }
+}
+console.log("upper case--" + count);
+
+var string = "LoWer CasE";
+var count = 0;
+for (var i = 0; i < string.length; i++) {
+  ch = string.charAt(i);
+  if (ch >= "a" && ch <= "z") {
+    count++;
+  }
+}
+console.log("lower case--" + count);
 
 // Progression 3: Control Statements - 2
 // 3.1 Print all the characters of the driver's name, separated by a space and in capitals i.e. "ProGrad"
+let sting = "Prograd";
+for (var i = 0; i <= sting.length; i++) {
+  ch = sting.charAt(i);
+  console.log(ch + ",");
+}
 
 // 3.2 Print all the characters of the navigator's name, in reverse order. i.e. "darGorP"
 
+var string = "prograd";
+for (var i = string.length; i >= 0; i--) {
+  ch = string.charAt(i);
+  console.log(ch);
+}
 // 3.3 Merge both the characters such that driver is followed by Navigator like "ProGrad FACEPrep"
 // - Now bring the FACEPrep to the start and send ProGrad to the back like "FACEPrep ProGrad"
+var prograd3 = " prograd ";
+var prograd4 = " FAceprep ";
+console.log(prograd3 + prograd4);
+console.log(prograd4 + prograd3);
 
 // 3.3 Depending on the lexicographic order of the strings, print:
 // - The driver's name goes first.
 // - Yo, the navigator goes first definitely.
 // - What?! You both have the same name?
+function strcmp(a, b) {
+  if (a === b) {
+    return 0;
+  }
+
+  if (a > b) {
+    return 1;
+  }
+
+  return -1;
+}
+
+console.log(strcmp("string", "print"));
+console.log(strcmp("print", "print"));
+console.log(strcmp("string", "string"));
 
 // Bonus Time!
 // Bonus 1:
@@ -41,6 +113,14 @@
 // Generate 3 paragraphs. Store the text in a variable type of string.
 // Make your program count the number of words in the string.
 // Make your program count the number of times the Latin word et appears.
+var string = "laren ate food along the road side and laren had paid the amount";
+var count = 0;
+for (var i = 0; i <= string.length; i++) {
+  string.includes("laren");
+  count++;
+}
+console.log(count);
+
 // Bonus 2:
 // Create a new variable phraseToCheck and have it contain some string value. Write a code that will check if the value we assigned to this variable is a Palindrome. Here are some examples of palindromes:
 
@@ -53,4 +133,4 @@
 // "put it up"
 // "Was it a car or a cat I saw?" and "No 'x' in Nixon".
 
-// Hint: If you use Google to help you to find solution to this iteration, you might run into some solutions that use advanced string or array methods (such as join(), reverse(), etc.). However, try to apply the knowledge you currently have since you can build pretty nice solution with just using for loop, if-else statements with some break and continue... Just sayin' 
+// Hint: If you use Google to help you to find solution to this iteration, you might run into some solutions that use advanced string or array methods (such as join(), reverse(), etc.). However, try to apply the knowledge you currently have since you can build pretty nice solution with just using for loop, if-else statements with some break and continue... Just sayin'
